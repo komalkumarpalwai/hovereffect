@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body
+        {
+            background-color: #f39c12;
+
+color: white;        }
+        /* Define a common style for the element */
+        .hover-effect {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 10px;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Define keyframes for different background effects */
+        @keyframes pulse {
+            0% { background-color: #3498db; }
+            50% { background-color: #2ecc71; }
+            100% { background-color: #3498db; }
+        }
+
+        @keyframes rotate {
+            0% { background-color: #e74c3c; transform: translateX(20%); }
+            50% { background-color: #f39c12; transform: translateX(40vw); }
+            100% { background-color: #e74c3c; transform: translateX(100vw); }
+
+        }
+
+        @keyframes gradient {
+            0% { background: linear-gradient(to right, #3498db, #2ecc71); }
+            100% { background: linear-gradient(to right, #2ecc71, #3498db); }
+        }
+
+        /* Apply the hover effect using keyframes */
+        .hover-effect:hover {
+            animation: pulse 2s infinite;
+        }
+
+        /* Apply a different hover effect using keyframes */
+        .hover-effect:hover + .hover-effect {
+            animation: rotate 2s  ease-in;
+        }
+
+        /* Apply another hover effect using keyframes */
+        .hover-effect:hover + .hover-effect + .hover-effect {
+            animation: gradient 2s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hover-effect">Hover me!</div>
+    <div class="hover-effect">Hover me too!</div>
+    <div class="hover-effect">Hover me as well!</div>
+
+</body>
+</html>
